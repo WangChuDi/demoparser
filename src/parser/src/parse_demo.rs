@@ -73,6 +73,7 @@ impl<'a> Parser<'a> {
         }
         if self.parsing_mode == ParsingMode::Normal
             && check_multithreadability(&self.input.wanted_player_props)
+            && !contains_usercmd_prop(&self.input.wanted_player_props)
             && !(self.parsing_mode == ParsingMode::ForceSingleThreaded)
             || self.parsing_mode == ParsingMode::ForceMultiThreaded
         {

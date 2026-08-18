@@ -1,6 +1,6 @@
 use crate::first_pass::frameparser::StartEndOffset;
 use crate::first_pass::parser::FirstPassOutput;
-use crate::first_pass::prop_controller::PropController;
+use crate::first_pass::prop_controller::{PropController, BUTTONS_PROP_NAME};
 use crate::first_pass::read_bits::DemoParserError;
 use crate::first_pass::sendtables::Serializer;
 use crate::first_pass::stringtables::StringTable;
@@ -358,6 +358,8 @@ pub fn create_huffman_lookup_table() -> Vec<(u8, u8)> {
     return huf2;
 }
 
-fn contains_usercmd_prop(names: &[String]) -> bool {
-    names.iter().any(|name| name.contains("usercmd") || BUTTONMAP.get(name.as_str()).is_some())
+pub(crate) fn contains_usercmd_prop(names: &[String]) -> bool {
+    names
+        .iter()
+        .any(|name| name.contains("usercmd") || BUTTONMAP.get(name.as_str()).is_some() || name == BUTTONS_PROP_NAME)
 }

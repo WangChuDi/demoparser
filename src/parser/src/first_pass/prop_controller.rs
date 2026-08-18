@@ -12,6 +12,7 @@ use ahash::AHashMap;
 pub const PLAYER_ENTITY_HANDLE_MISSING: i32 = 2047;
 pub const SPECTATOR_TEAM_NUM: u32 = 1;
 pub const BUTTONS_BASEID: u32 = 100000;
+pub const BUTTONS_PROP_NAME: &str = "CCSPlayerPawn.CCSPlayer_MovementServices.m_nButtonDownMaskPrev";
 pub const NORMAL_PROP_BASEID: u32 = 1000;
 pub const WEAPON_SKIN_NAME: u32 = 420420420;
 pub const WEAPON_ORIGINGAL_OWNER_ID: u32 = 6942000;
